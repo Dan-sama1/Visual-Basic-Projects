@@ -1,0 +1,12 @@
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\bin\Debug\ArithmeticOpreation.exe.config
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\bin\Debug\ArithmeticOpreation.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\bin\Debug\ArithmeticOpreation.pdb
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\bin\Debug\ArithmeticOpreation.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.vbproj.AssemblyReference.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.Form1.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.Resources.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.vbproj.GenerateResource.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.vbproj.CoreCompileInputs.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ArithmeticOpreation\obj\Debug\ArithmeticOpreation.pdb
