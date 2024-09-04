@@ -1,0 +1,12 @@
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital Clock.vbproj.AssemblyReference.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital_Clock.frmClock.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital_Clock.Resources.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital Clock.vbproj.GenerateResource.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital Clock.vbproj.CoreCompileInputs.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\bin\Debug\Digital Clock.exe.config
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\bin\Debug\Digital Clock.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\bin\Debug\Digital Clock.pdb
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\bin\Debug\Digital Clock.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital Clock.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital Clock.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Digital Clock\obj\Debug\Digital Clock.pdb
