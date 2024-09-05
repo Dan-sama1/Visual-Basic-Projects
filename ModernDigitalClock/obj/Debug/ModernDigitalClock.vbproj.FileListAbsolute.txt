@@ -1,0 +1,12 @@
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.vbproj.AssemblyReference.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.frmForm.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.Resources.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.vbproj.GenerateResource.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.vbproj.CoreCompileInputs.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\bin\Debug\ModernDigitalClock.exe.config
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\bin\Debug\ModernDigitalClock.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\bin\Debug\ModernDigitalClock.pdb
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\bin\Debug\ModernDigitalClock.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\ModernDigitalClock\obj\Debug\ModernDigitalClock.pdb
