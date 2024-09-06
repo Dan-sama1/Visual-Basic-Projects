@@ -58,15 +58,14 @@ Partial Class frmForm
         '
         'lblDay
         '
-        Me.lblDay.AutoSize = True
         Me.lblDay.BackColor = System.Drawing.SystemColors.WindowText
         Me.lblDay.Font = New System.Drawing.Font("Digital-7 Mono", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDay.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.lblDay.Location = New System.Drawing.Point(249, 324)
+        Me.lblDay.Location = New System.Drawing.Point(245, 324)
         Me.lblDay.Name = "lblDay"
         Me.lblDay.Size = New System.Drawing.Size(129, 28)
         Me.lblDay.TabIndex = 2
-        Me.lblDay.Text = "888888888"
+        Me.lblDay.Text = "888888"
         Me.lblDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tmrTimer
@@ -76,15 +75,15 @@ Partial Class frmForm
         '
         'lblMonth
         '
-        Me.lblMonth.AutoSize = True
         Me.lblMonth.BackColor = System.Drawing.SystemColors.WindowText
         Me.lblMonth.Font = New System.Drawing.Font("Digital-7 Mono", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMonth.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblMonth.Location = New System.Drawing.Point(270, 352)
+        Me.lblMonth.Location = New System.Drawing.Point(269, 352)
         Me.lblMonth.Name = "lblMonth"
         Me.lblMonth.Size = New System.Drawing.Size(80, 17)
         Me.lblMonth.TabIndex = 3
-        Me.lblMonth.Text = "888888888"
+        Me.lblMonth.Text = "888"
+        Me.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblDate
         '
