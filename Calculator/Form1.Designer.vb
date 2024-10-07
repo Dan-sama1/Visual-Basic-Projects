@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.txtDisplay = New System.Windows.Forms.TextBox()
         Me.btnMultiply = New System.Windows.Forms.Button()
         Me.btnDivide = New System.Windows.Forms.Button()
@@ -354,8 +355,10 @@ Partial Class Form1
         Me.Controls.Add(Me.btnMultiply)
         Me.Controls.Add(Me.txtDisplay)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Calculator"
         Me.ResumeLayout(False)
         Me.PerformLayout()
