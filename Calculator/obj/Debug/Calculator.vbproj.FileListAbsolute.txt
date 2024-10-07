@@ -1,0 +1,24 @@
+D:\DAN\CODES\VISUAL BASICS\Calculator\bin\Debug\Calculator.exe.config
+D:\DAN\CODES\VISUAL BASICS\Calculator\bin\Debug\Calculator.exe
+D:\DAN\CODES\VISUAL BASICS\Calculator\bin\Debug\Calculator.pdb
+D:\DAN\CODES\VISUAL BASICS\Calculator\bin\Debug\Calculator.xml
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.vbproj.AssemblyReference.cache
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.Form1.resources
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.Resources.resources
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.vbproj.GenerateResource.cache
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.vbproj.CoreCompileInputs.cache
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.exe
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.xml
+D:\DAN\CODES\VISUAL BASICS\Calculator\obj\Debug\Calculator.pdb
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\bin\Debug\Calculator.exe.config
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\bin\Debug\Calculator.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\bin\Debug\Calculator.pdb
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\bin\Debug\Calculator.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.vbproj.AssemblyReference.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.Form1.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.Resources.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.vbproj.GenerateResource.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.vbproj.CoreCompileInputs.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Calculator\obj\Debug\Calculator.pdb
