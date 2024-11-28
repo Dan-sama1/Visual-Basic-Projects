@@ -1,0 +1,17 @@
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\bin\Debug\Video Player.exe.config
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\bin\Debug\Video Player.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\bin\Debug\Video Player.pdb
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\bin\Debug\Video Player.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\bin\Debug\Interop.WMPLib.dll
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\bin\Debug\AxInterop.WMPLib.dll
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video Player.vbproj.AssemblyReference.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Interop.WMPLib.dll
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\AxInterop.WMPLib.dll
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video Player.vbproj.ResolveComReference.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video_Player.Form1.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video_Player.Resources.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video Player.vbproj.GenerateResource.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video Player.vbproj.CoreCompileInputs.cache
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video Player.exe
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video Player.xml
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\Video Player\Video Player\obj\Debug\Video Player.pdb
