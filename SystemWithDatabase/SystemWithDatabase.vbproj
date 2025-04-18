@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D486330-EE10-4D42-9B8F-EEC3BB9D3DCD}</ProjectGuid>
+    <ProjectGuid>{FD4997BE-1C97-483A-8144-4697A74EDF45}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SystemWithDbms.My.MyApplication</StartupObject>
-    <RootNamespace>SystemWithDbms</RootNamespace>
-    <AssemblyName>SystemWithDbms</AssemblyName>
+    <StartupObject>SystemWithDatabase.My.MyApplication</StartupObject>
+    <RootNamespace>SystemWithDatabase</RootNamespace>
+    <AssemblyName>SystemWithDatabase</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SystemWithDbms.xml</DocumentationFile>
+    <DocumentationFile>SystemWithDatabase.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SystemWithDbms.xml</DocumentationFile>
+    <DocumentationFile>SystemWithDatabase.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

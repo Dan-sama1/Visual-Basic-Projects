@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("SystemWithDbms")>
+<Assembly: AssemblyTitle("SystemWithDatabase")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("SystemWithDbms")>
+<Assembly: AssemblyProduct("SystemWithDatabase")>
 <Assembly: AssemblyCopyright("Copyright ©  2025")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("fcbffbbb-008c-40a7-8a33-090a2e355d8f")>
+<Assembly: Guid("edc8835f-db3f-470e-b393-a964970ae362")>
 
 ' Version information for an assembly consists of the following four values:
 '
