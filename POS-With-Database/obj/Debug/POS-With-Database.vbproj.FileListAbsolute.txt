@@ -19,3 +19,4 @@ D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS-With-D
 D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS-With-Database.pdb
 D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.Admin.resources
 D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.POS.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.Manage_Orders.resources

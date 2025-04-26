@@ -84,6 +84,12 @@
     <Compile Include="Admin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Manage_Orders.Designer.vb">
+      <DependentUpon>Manage_Orders.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage_Orders.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="POS.Designer.vb">
       <DependentUpon>POS.vb</DependentUpon>
     </Compile>
@@ -121,6 +127,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manage_Orders.resx">
+      <DependentUpon>Manage_Orders.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -142,6 +151,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rsc\cooked2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rsc\chat-im-cooked-v0-3z8fc1lv9khe1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -22,19 +22,16 @@ Partial Class Admin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.dtReport = New System.Windows.Forms.DataGridView()
-        Me.picMilkTea = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnManage = New System.Windows.Forms.Button()
         Me.btnAddAccount = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblLogOut = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblTodaySales = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -43,11 +40,13 @@ Partial Class Admin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.picMilkTea = New System.Windows.Forms.PictureBox()
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picMilkTea, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.picMilkTea, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -95,18 +94,9 @@ Partial Class Admin
         Me.dtReport.GridColor = System.Drawing.SystemColors.ControlLightLight
         Me.dtReport.Location = New System.Drawing.Point(28, 169)
         Me.dtReport.Name = "dtReport"
+        Me.dtReport.ReadOnly = True
         Me.dtReport.Size = New System.Drawing.Size(616, 366)
         Me.dtReport.TabIndex = 5
-        '
-        'picMilkTea
-        '
-        Me.picMilkTea.Image = CType(resources.GetObject("picMilkTea.Image"), System.Drawing.Image)
-        Me.picMilkTea.Location = New System.Drawing.Point(682, 88)
-        Me.picMilkTea.Name = "picMilkTea"
-        Me.picMilkTea.Size = New System.Drawing.Size(294, 310)
-        Me.picMilkTea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picMilkTea.TabIndex = 6
-        Me.picMilkTea.TabStop = False
         '
         'Label4
         '
@@ -121,21 +111,23 @@ Partial Class Admin
         'btnManage
         '
         Me.btnManage.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.btnManage.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManage.Location = New System.Drawing.Point(682, 477)
         Me.btnManage.Name = "btnManage"
         Me.btnManage.Size = New System.Drawing.Size(142, 58)
         Me.btnManage.TabIndex = 12
-        Me.btnManage.Text = "btnManage"
+        Me.btnManage.Text = "Manage Orders"
         Me.btnManage.UseVisualStyleBackColor = False
         '
         'btnAddAccount
         '
         Me.btnAddAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.btnAddAccount.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddAccount.Location = New System.Drawing.Point(830, 477)
         Me.btnAddAccount.Name = "btnAddAccount"
         Me.btnAddAccount.Size = New System.Drawing.Size(142, 58)
         Me.btnAddAccount.TabIndex = 13
-        Me.btnAddAccount.Text = "Button3"
+        Me.btnAddAccount.Text = "Add Account"
         Me.btnAddAccount.UseVisualStyleBackColor = False
         '
         'Label6
@@ -151,23 +143,13 @@ Partial Class Admin
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel1.Controls.Add(Me.lblLogOut)
+        Me.Panel1.Controls.Add(Me.btnLogout)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Panel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.Panel1.Location = New System.Drawing.Point(1, -1)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1006, 59)
         Me.Panel1.TabIndex = 15
-        '
-        'lblLogOut
-        '
-        Me.lblLogOut.AutoSize = True
-        Me.lblLogOut.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLogOut.Location = New System.Drawing.Point(894, 19)
-        Me.lblLogOut.Name = "lblLogOut"
-        Me.lblLogOut.Size = New System.Drawing.Size(81, 28)
-        Me.lblLogOut.TabIndex = 1
-        Me.lblLogOut.Text = "LOG OUT"
         '
         'Panel2
         '
@@ -218,7 +200,6 @@ Partial Class Admin
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(142, 42)
         Me.Label8.TabIndex = 19
-        Me.Label8.Text = "Label8"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7
@@ -249,11 +230,34 @@ Partial Class Admin
         Me.dtpDate.Size = New System.Drawing.Size(274, 26)
         Me.dtpDate.TabIndex = 11
         '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLogout.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Location = New System.Drawing.Point(862, 13)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(113, 28)
+        Me.btnLogout.TabIndex = 2
+        Me.btnLogout.Text = "LOG OUT"
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
+        'picMilkTea
+        '
+        Me.picMilkTea.Image = Global.POS_With_Database.My.Resources.Resources.cooked2
+        Me.picMilkTea.Location = New System.Drawing.Point(682, 88)
+        Me.picMilkTea.Name = "picMilkTea"
+        Me.picMilkTea.Size = New System.Drawing.Size(294, 310)
+        Me.picMilkTea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picMilkTea.TabIndex = 6
+        Me.picMilkTea.TabStop = False
+        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1008, 561)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.Panel3)
@@ -275,11 +279,10 @@ Partial Class Admin
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picMilkTea, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        CType(Me.picMilkTea, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -289,14 +292,12 @@ Partial Class Admin
     Friend WithEvents Label3 As Label
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnSearch As Button
-    Friend WithEvents dtReport As DataGridView
     Friend WithEvents picMilkTea As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents btnManage As Button
     Friend WithEvents btnAddAccount As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents lblLogOut As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblTodaySales As Label
     Friend WithEvents Label2 As Label
@@ -305,4 +306,6 @@ Partial Class Admin
     Friend WithEvents Label8 As Label
     Friend WithEvents btnRefresh As Button
     Friend WithEvents dtpDate As DateTimePicker
+    Friend WithEvents btnLogout As Button
+    Public WithEvents dtReport As DataGridView
 End Class

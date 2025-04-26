@@ -22,5 +22,15 @@ POS-With-Database
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:POS_With_Database.My.Resources.Resources.chat_im_cooked_v0_3z8fc1lv9khe1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:POS_With_Database.My.Resources.Resources.cooked2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

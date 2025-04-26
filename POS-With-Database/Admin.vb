@@ -7,7 +7,8 @@ Public Class Admin
 
         Dim query As String = "
         SELECT 
-            t.transaction_date AS 'Transact Date',
+            ti.item_id AS 'Item ID',
+            DATE_FORMAT(t.transaction_date, '%Y-%m-%d') AS 'Transact Date',
             TIME(t.transaction_date) AS 'Transact Time',
             t.transaction_id AS 'Transact Number',
             i.item_name AS 'Order Name',
@@ -19,7 +20,7 @@ Public Class Admin
         JOIN 
             tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
         JOIN 
-            tbl_items i ON ti.item_id = i.item_id;
+            tbl_items i ON ti.item_id = i.item_id
     "
 
         Dim adapter As New MySqlDataAdapter(query, connection)
@@ -27,6 +28,7 @@ Public Class Admin
         adapter.Fill(table)
 
         dtReport.DataSource = table
+
 
         connection.Close()
     End Sub
@@ -83,7 +85,7 @@ Public Class Admin
             t.transaction_id AS 'Transact Number',
             i.item_name AS 'Order Name',
             ti.quantity AS 'Quantity',
-            ti.total_price AS 'Total'
+            ti.total_price AS 'Total',
         FROM 
             tbl_transactions t
         JOIN 
@@ -113,7 +115,7 @@ Public Class Admin
     End Sub
 
 
-    Private Sub lblLogOut_Click(sender As Object, e As EventArgs) Handles lblLogOut.Click
+    Private Sub lblLogOut_Click(sender As Object, e As EventArgs)
         Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to Log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If confirm = DialogResult.Yes Then
@@ -133,6 +135,26 @@ Public Class Admin
     Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
         If Asc(e.KeyChar) = 13 Then
             btnSearch.PerformClick()
+        End If
+    End Sub
+    'logout
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to Log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If confirm = DialogResult.Yes Then
+            Me.Hide()
+            Form1.Show()
+        End If
+    End Sub
+
+    Private Sub btnManage_Click(sender As Object, e As EventArgs) Handles btnManage.Click
+        Manage_Orders.dtReport.DataSource = Me.dtReport.DataSource
+        Manage_Orders.ShowDialog()
+    End Sub
+    'HIDE ITEM ID
+    Private Sub dtReport_DataBindingComplete(sender As Object, e As DataGridViewBindingCompleteEventArgs) Handles dtReport.DataBindingComplete
+        If dtReport.Columns.Contains("Item ID") Then
+            dtReport.Columns("Item ID").Visible = False
         End If
     End Sub
 End Class
