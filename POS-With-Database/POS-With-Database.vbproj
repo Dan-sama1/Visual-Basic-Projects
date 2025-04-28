@@ -155,8 +155,5 @@
   <ItemGroup>
     <None Include="rsc\cooked2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="rsc\chat-im-cooked-v0-3z8fc1lv9khe1.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

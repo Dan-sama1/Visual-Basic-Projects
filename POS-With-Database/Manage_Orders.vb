@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Manage_Orders
+
     'LOAD REPORT
     Public Sub LoadTransactionReport()
         ConnectionToDatabase()
@@ -93,6 +94,7 @@ Public Class Manage_Orders
             connection.Close()
         End Try
     End Sub
+
 
     'DELETE
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
