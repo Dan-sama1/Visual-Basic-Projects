@@ -35,7 +35,7 @@ Partial Class Form1
         '
         Me.txtLabel.Font = New System.Drawing.Font("Poppins", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.txtLabel.Location = New System.Drawing.Point(55, 32)
+        Me.txtLabel.Location = New System.Drawing.Point(12, 26)
         Me.txtLabel.Name = "txtLabel"
         Me.txtLabel.Size = New System.Drawing.Size(262, 49)
         Me.txtLabel.TabIndex = 0

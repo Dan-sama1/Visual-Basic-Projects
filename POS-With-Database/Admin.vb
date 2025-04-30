@@ -38,18 +38,20 @@ Public Class Admin
 
         ' SQL query to calculate total sales for today
         Dim query As String = "
-    SELECT SUM(ti.total_price) AS 'TodaySales'
-    FROM tbl_transactionItems ti
-    JOIN tbl_transactions t ON ti.transaction_id = t.transaction_id
-    WHERE DATE(t.transaction_date) = CURDATE();"
+        SELECT SUM(ti.total_price) AS 'TodaySales'
+        FROM tbl_transactionItems ti
+        JOIN tbl_transactions t ON ti.transaction_id = t.transaction_id
+        WHERE DATE(t.transaction_date) = CURDATE();
+        "
 
         ' Execute the query
         Dim command As New MySqlCommand(query, connection)
         Dim result = command.ExecuteScalar()
 
-        ' Check if the result is DBNull (no transactions for today)
+        ' Check if there is no transaction for the day
         If IsDBNull(result) Then
-            lblTodaySales.Text = "0.00" ' No sales today
+            ' No sales today
+            lblTodaySales.Text = "0.00"
         Else
             ' Convert result to Decimal and then format as currency
             lblTodaySales.Text = Convert.ToDecimal(result).ToString("C2") ' Format as currency
@@ -58,24 +60,61 @@ Public Class Admin
         connection.Close()
     End Sub
 
+    'LOAD MONTHLY SALES
+    Private Sub DisplayMothlySales()
+        Dim currentMonth As Integer = DateTime.Now.Month
+
+        Dim query As String = "
+        SELECT SUM(ti.total_price)
+        FROM tbl_transactions t
+        JOIN tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
+        WHERE MONTH(t.transaction_date) = @currentMonth
+        "
+
+        Try
+            ConnectionToDatabase()
+
+            Dim command As New MySqlCommand(query, connection)
+            command.Parameters.AddWithValue("@currentMonth", currentMonth)
+
+            Dim result As Object = command.ExecuteScalar()
+
+            If result IsNot DBNull.Value Then
+                Dim monthlySales As Decimal = Convert.ToDecimal(result)
+                lblMonthlySales.Text = monthlySales.ToString("C2")
+            Else
+                lblMonthlySales.Text = "0.00"
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error Fetching Sales Data", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            connection.Close()
+        End Try
+
+    End Sub
+
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadTransactionReport()
         LoadTodaySales()
+        DisplayMothlySales()
 
         dtpDate.Format = DateTimePickerFormat.Custom
         dtpDate.CustomFormat = "MMMM yyyy"
     End Sub
 
-    'btn
+    'Search
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         ConnectionToDatabase()
 
         Dim searchText As String = txtSearch.Text.Trim()
 
         ' pull the monht and year 
-        Dim selectedMonth As String = dtpDate.Value.ToString("MM")  ' Get month in numeric form
-        Dim selectedYear As String = dtpDate.Value.Year.ToString() ' Get the year
+        ' NONTH IN NUMERIC FORM
+        Dim selectedMonth As String = dtpDate.Value.ToString("MM")
+        'SET THE YEAR
+        Dim selectedYear As String = dtpDate.Value.Year.ToString()
 
         ' query
         Dim query As String = "
@@ -85,7 +124,7 @@ Public Class Admin
             t.transaction_id AS 'Transact Number',
             i.item_name AS 'Order Name',
             ti.quantity AS 'Quantity',
-            ti.total_price AS 'Total',
+            ti.total_price AS 'Total'
         FROM 
             tbl_transactions t
         JOIN 
@@ -100,7 +139,6 @@ Public Class Admin
             AND YEAR(t.transaction_date) = @year;
     "
 
-        ' Add parameters for search text, month, and year
         Dim adapter As New MySqlDataAdapter(query, connection)
         adapter.SelectCommand.Parameters.AddWithValue("@search", "%" & searchText & "%")
         adapter.SelectCommand.Parameters.AddWithValue("@month", selectedMonth)
@@ -128,9 +166,6 @@ Public Class Admin
         LoadTransactionReport()
     End Sub
 
-    Private Sub lblTodaySales_Click(sender As Object, e As EventArgs) Handles lblTodaySales.Click
-        LoadTodaySales()
-    End Sub
 
     Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
         If Asc(e.KeyChar) = 13 Then
@@ -142,13 +177,20 @@ Public Class Admin
         Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to Log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If confirm = DialogResult.Yes Then
-            Me.Hide()
+            Me.Close()
             Form1.Show()
         End If
     End Sub
 
     Private Sub btnManage_Click(sender As Object, e As EventArgs) Handles btnManage.Click
         Manage_Orders.dtReport.DataSource = Me.dtReport.DataSource
+
+        'SAVE CURRENT DATA FOR COMPARING CHANGED AND UNCHANGED DATA
+        For Each row As DataGridViewRow In Manage_Orders.dtReport.Rows
+            If Not row.IsNewRow Then
+                row.Cells("Total").Tag = row.Cells("Total").Value
+            End If
+        Next
         Manage_Orders.ShowDialog()
     End Sub
     'HIDE ITEM ID
@@ -156,5 +198,9 @@ Public Class Admin
         If dtReport.Columns.Contains("Item ID") Then
             dtReport.Columns("Item ID").Visible = False
         End If
+    End Sub
+
+    Private Sub btnAddAccount_Click(sender As Object, e As EventArgs) Handles btnAddAccount.Click
+        Add_Account.ShowDialog()
     End Sub
 End Class

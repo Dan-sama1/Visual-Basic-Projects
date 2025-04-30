@@ -22,6 +22,7 @@ Partial Class Manage_Orders
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -33,6 +34,8 @@ Partial Class Manage_Orders
         Me.btnBack = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.btnInfo = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,7 +88,7 @@ Partial Class Manage_Orders
         '
         Me.Label1.Font = New System.Drawing.Font("Poppins Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(34, 14)
+        Me.Label1.Location = New System.Drawing.Point(64, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(159, 26)
         Me.Label1.TabIndex = 5
@@ -108,7 +111,7 @@ Partial Class Manage_Orders
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(-12, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(825, 54)
+        Me.Panel1.Size = New System.Drawing.Size(793, 54)
         Me.Panel1.TabIndex = 13
         '
         'btnBack
@@ -145,12 +148,27 @@ Partial Class Manage_Orders
         Me.btnRefresh.Text = "↻"
         Me.btnRefresh.UseVisualStyleBackColor = True
         '
+        'btnInfo
+        '
+        Me.btnInfo.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInfo.Font = New System.Drawing.Font("Poppins Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInfo.ForeColor = System.Drawing.Color.Black
+        Me.btnInfo.Location = New System.Drawing.Point(747, 53)
+        Me.btnInfo.Name = "btnInfo"
+        Me.btnInfo.Size = New System.Drawing.Size(32, 32)
+        Me.btnInfo.TabIndex = 9
+        Me.btnInfo.Text = "?"
+        Me.btnInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnInfo.UseVisualStyleBackColor = True
+        '
         'Manage_Orders
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(779, 471)
+        Me.Controls.Add(Me.btnInfo)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnUpdate)
@@ -185,4 +203,6 @@ Partial Class Manage_Orders
     Friend WithEvents btnBack As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnRefresh As Button
+    Friend WithEvents btnInfo As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

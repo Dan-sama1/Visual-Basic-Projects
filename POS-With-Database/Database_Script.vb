@@ -3,7 +3,7 @@ Module Script
     Public connection As MySqlConnection
 
     Public Sub ConnectionToDatabase()
-        connection = New MySqlConnection("server=127.0.0.1;port=3308; user id=root;password=password123;database=pos_system")
+        connection = New MySqlConnection("server=127.0.0.1;port=3308; user id=posongbato;password=;database=db_posongbato")
 
         Try
             connection.Open()

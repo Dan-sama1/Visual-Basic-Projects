@@ -32,15 +32,15 @@ Partial Class Admin
         Me.btnAddAccount = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblTodaySales = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblMonthlySales = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
-        Me.btnLogout = New System.Windows.Forms.Button()
         Me.picMilkTea = New System.Windows.Forms.PictureBox()
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -112,7 +112,7 @@ Partial Class Admin
         '
         Me.btnManage.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.btnManage.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnManage.Location = New System.Drawing.Point(682, 477)
+        Me.btnManage.Location = New System.Drawing.Point(687, 477)
         Me.btnManage.Name = "btnManage"
         Me.btnManage.Size = New System.Drawing.Size(142, 58)
         Me.btnManage.TabIndex = 12
@@ -151,6 +151,19 @@ Partial Class Admin
         Me.Panel1.Size = New System.Drawing.Size(1006, 59)
         Me.Panel1.TabIndex = 15
         '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLogout.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Location = New System.Drawing.Point(862, 13)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(113, 28)
+        Me.btnLogout.TabIndex = 2
+        Me.btnLogout.Text = "LOG OUT"
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
@@ -186,21 +199,21 @@ Partial Class Admin
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.lblMonthlySales)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Location = New System.Drawing.Point(830, 401)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(142, 70)
         Me.Panel3.TabIndex = 19
         '
-        'Label8
+        'lblMonthlySales
         '
-        Me.Label8.Font = New System.Drawing.Font("Poppins", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(0, 23)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(142, 42)
-        Me.Label8.TabIndex = 19
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblMonthlySales.Font = New System.Drawing.Font("Poppins Medium", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.lblMonthlySales.Location = New System.Drawing.Point(0, 23)
+        Me.lblMonthlySales.Name = "lblMonthlySales"
+        Me.lblMonthlySales.Size = New System.Drawing.Size(142, 42)
+        Me.lblMonthlySales.TabIndex = 19
+        Me.lblMonthlySales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7
         '
@@ -229,19 +242,6 @@ Partial Class Admin
         Me.dtpDate.Name = "dtpDate"
         Me.dtpDate.Size = New System.Drawing.Size(274, 26)
         Me.dtpDate.TabIndex = 11
-        '
-        'btnLogout
-        '
-        Me.btnLogout.BackColor = System.Drawing.Color.Black
-        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnLogout.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.Location = New System.Drawing.Point(862, 13)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(113, 28)
-        Me.btnLogout.TabIndex = 2
-        Me.btnLogout.Text = "LOG OUT"
-        Me.btnLogout.UseVisualStyleBackColor = False
         '
         'picMilkTea
         '
@@ -303,7 +303,7 @@ Partial Class Admin
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lblMonthlySales As Label
     Friend WithEvents btnRefresh As Button
     Friend WithEvents dtpDate As DateTimePicker
     Friend WithEvents btnLogout As Button
