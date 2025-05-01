@@ -13,6 +13,7 @@ Public Class Add_Account
         'CHECK IF THE FIELDS ARE FILLED UP
         If txtUsername.Text = "" Or txtPassword.Text = "" Or txtConfirmPass.Text = "" Then
             MsgBox("Please fill out all the fields!", vbExclamation)
+            txtUsername.Focus()
             Return
         End If
 

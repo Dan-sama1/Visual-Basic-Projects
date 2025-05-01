@@ -35,6 +35,7 @@ Public Class Form1
                 Me.Hide()
             Else
                 MessageBox.Show("Invalid username or password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                txtUsername.Focus()
                 connection.Close()
             End If
         Catch ex As Exception
