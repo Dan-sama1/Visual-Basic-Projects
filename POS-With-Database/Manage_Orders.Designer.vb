@@ -78,6 +78,7 @@ Partial Class Manage_Orders
         '
         'dtReport
         '
+        Me.dtReport.BackgroundColor = System.Drawing.Color.White
         Me.dtReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtReport.Location = New System.Drawing.Point(27, 141)
         Me.dtReport.Name = "dtReport"

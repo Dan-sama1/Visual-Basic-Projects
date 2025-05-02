@@ -6,22 +6,25 @@ Public Class Admin
         ConnectionToDatabase()
 
         Dim query As String = "
-        SELECT 
-            ti.item_id AS 'Item ID',
-            DATE_FORMAT(t.transaction_date, '%Y-%m-%d') AS 'Transact Date',
-            TIME(t.transaction_date) AS 'Transact Time',
-            t.transaction_id AS 'Transact Number',
-            i.item_name AS 'Order Name',
-            i.price AS 'Price',
-            ti.quantity AS 'Quantity',
-            ti.total_price AS 'Total'
-        FROM 
-            tbl_transactions t
-        JOIN 
-            tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
-        JOIN 
-            tbl_items i ON ti.item_id = i.item_id
-    "
+    SELECT 
+        ti.item_id AS 'Item ID',
+        DATE_FORMAT(t.transaction_date, '%Y-%m-%d') AS 'Transact Date',
+        TIME(t.transaction_date) AS 'Transact Time',
+        t.transaction_id AS 'Transact Number',
+        i.item_name AS 'Order Name',
+        s.price AS 'Price',
+        ti.quantity AS 'Quantity',
+        ti.total_price AS 'Total'
+    FROM 
+        tbl_transactions t
+    JOIN 
+        tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
+    JOIN 
+        tbl_items i ON ti.item_id = i.item_id
+    JOIN 
+        tbl_item_sizes s ON ti.size_id = s.size_id
+"
+
 
         Dim adapter As New MySqlDataAdapter(query, connection)
         Dim table As New DataTable()
@@ -94,7 +97,7 @@ Public Class Admin
 
     End Sub
 
-
+    'FORM LOAD
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadTransactionReport()
         LoadTodaySales()
@@ -210,5 +213,6 @@ Public Class Admin
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
         AddItem.ShowDialog()
     End Sub
+
 
 End Class

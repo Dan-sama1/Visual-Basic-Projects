@@ -13,7 +13,7 @@ Public Class Manage_Orders
         TIME(t.transaction_date) AS 'Transact Time',
         t.transaction_id AS 'Transact Number',
         i.item_name AS 'Order Name',
-        i.price AS 'Price',
+        s.price AS 'Price',
         ti.quantity AS 'Quantity',
         ti.total_price AS 'Total'
     FROM 
@@ -21,8 +21,10 @@ Public Class Manage_Orders
     JOIN 
         tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
     JOIN 
-        tbl_items i ON ti.item_id = i.item_id;
-    "
+        tbl_items i ON ti.item_id = i.item_id
+    JOIN 
+        tbl_item_sizes s ON ti.size_id = s.size_id
+"
 
         Dim adapter As New MySqlDataAdapter(query, connection)
         Dim table As New DataTable()

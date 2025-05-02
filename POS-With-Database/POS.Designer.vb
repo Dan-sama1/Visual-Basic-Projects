@@ -30,7 +30,7 @@ Partial Class POS
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtPay = New System.Windows.Forms.TextBox()
         Me.lblChange = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblChnge = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.flpItemName = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -42,43 +42,43 @@ Partial Class POS
         Me.btnPRAF = New System.Windows.Forms.Button()
         Me.btnFruitTea = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.label2 = New System.Windows.Forms.Label()
+        Me.lblTtl = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.pnlAddOrder = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.grbSize = New System.Windows.Forms.GroupBox()
-        Me.rdbGrande = New System.Windows.Forms.RadioButton()
-        Me.rdbMedio = New System.Windows.Forms.RadioButton()
-        Me.lblItemName = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
-        Me.numQuantity = New System.Windows.Forms.NumericUpDown()
         Me.grbAddon = New System.Windows.Forms.GroupBox()
-        Me.chkPearl = New System.Windows.Forms.CheckBox()
-        Me.chkCrystal = New System.Windows.Forms.CheckBox()
-        Me.chkCoffeeJelly = New System.Windows.Forms.CheckBox()
-        Me.chkCreamCheese = New System.Windows.Forms.CheckBox()
-        Me.chkCheeseCake = New System.Windows.Forms.CheckBox()
-        Me.chkCreamPuff = New System.Windows.Forms.CheckBox()
         Me.chkOreo = New System.Windows.Forms.CheckBox()
+        Me.chkCreamPuff = New System.Windows.Forms.CheckBox()
+        Me.chkCheeseCake = New System.Windows.Forms.CheckBox()
+        Me.chkCreamCheese = New System.Windows.Forms.CheckBox()
+        Me.chkCoffeeJelly = New System.Windows.Forms.CheckBox()
+        Me.chkCrystal = New System.Windows.Forms.CheckBox()
+        Me.chkPearl = New System.Windows.Forms.CheckBox()
+        Me.numQuantity = New System.Windows.Forms.NumericUpDown()
+        Me.grbSize = New System.Windows.Forms.GroupBox()
+        Me.rdbMedio = New System.Windows.Forms.RadioButton()
+        Me.rdbGrande = New System.Windows.Forms.RadioButton()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.lblItemName = New System.Windows.Forms.Label()
         Me.dtRetailer = New System.Windows.Forms.DataGridView()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dtOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.pnlAddOrder.SuspendLayout()
-        Me.Panel6.SuspendLayout()
+        Me.grbAddon.SuspendLayout()
+        CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbSize.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grbAddon.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         CType(Me.dtRetailer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -146,7 +146,7 @@ Partial Class POS
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.txtPay)
         Me.Panel2.Controls.Add(Me.lblChange)
-        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.lblChnge)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Location = New System.Drawing.Point(12, 445)
         Me.Panel2.Name = "Panel2"
@@ -155,8 +155,9 @@ Partial Class POS
         '
         'txtPay
         '
+        Me.txtPay.Enabled = False
         Me.txtPay.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPay.Location = New System.Drawing.Point(151, 21)
+        Me.txtPay.Location = New System.Drawing.Point(151, 17)
         Me.txtPay.Name = "txtPay"
         Me.txtPay.Size = New System.Drawing.Size(158, 27)
         Me.txtPay.TabIndex = 3
@@ -170,16 +171,18 @@ Partial Class POS
         Me.lblChange.Size = New System.Drawing.Size(158, 28)
         Me.lblChange.TabIndex = 2
         Me.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblChange.Visible = False
         '
-        'Label4
+        'lblChnge
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(72, 62)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(76, 28)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Change"
+        Me.lblChnge.AutoSize = True
+        Me.lblChnge.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChnge.Location = New System.Drawing.Point(72, 62)
+        Me.lblChnge.Name = "lblChnge"
+        Me.lblChnge.Size = New System.Drawing.Size(76, 28)
+        Me.lblChnge.TabIndex = 1
+        Me.lblChnge.Text = "Change"
+        Me.lblChnge.Visible = False
         '
         'Label3
         '
@@ -302,21 +305,22 @@ Partial Class POS
         Me.btnClear.Text = "↻"
         Me.btnClear.UseVisualStyleBackColor = True
         '
-        'label2
+        'lblTtl
         '
-        Me.label2.Font = New System.Drawing.Font("Poppins Medium", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label2.Location = New System.Drawing.Point(3, 2)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(99, 49)
-        Me.label2.TabIndex = 0
-        Me.label2.Text = "Total:"
-        Me.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblTtl.Font = New System.Drawing.Font("Poppins Medium", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTtl.Location = New System.Drawing.Point(3, 2)
+        Me.lblTtl.Name = "lblTtl"
+        Me.lblTtl.Size = New System.Drawing.Size(99, 49)
+        Me.lblTtl.TabIndex = 0
+        Me.lblTtl.Text = "Total:"
+        Me.lblTtl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblTtl.Visible = False
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.lblTotal)
-        Me.Panel4.Controls.Add(Me.label2)
+        Me.Panel4.Controls.Add(Me.lblTtl)
         Me.Panel4.Location = New System.Drawing.Point(13, 376)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(314, 54)
@@ -331,6 +335,7 @@ Partial Class POS
         Me.lblTotal.TabIndex = 1
         Me.lblTotal.Text = "00.00"
         Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblTotal.Visible = False
         '
         'pnlAddOrder
         '
@@ -346,128 +351,6 @@ Partial Class POS
         Me.pnlAddOrder.Size = New System.Drawing.Size(700, 415)
         Me.pnlAddOrder.TabIndex = 10
         Me.pnlAddOrder.Visible = False
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.Black
-        Me.Panel6.Controls.Add(Me.Button2)
-        Me.Panel6.Controls.Add(Me.lblItemName)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(700, 67)
-        Me.Panel6.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(306, 99)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 23)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Quantity"
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.ForeColor = System.Drawing.Color.Black
-        Me.btnAdd.Location = New System.Drawing.Point(310, 366)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(364, 36)
-        Me.btnAdd.TabIndex = 6
-        Me.btnAdd.Text = "Add Order"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'grbSize
-        '
-        Me.grbSize.Controls.Add(Me.rdbMedio)
-        Me.grbSize.Controls.Add(Me.rdbGrande)
-        Me.grbSize.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grbSize.ForeColor = System.Drawing.Color.White
-        Me.grbSize.Location = New System.Drawing.Point(310, 162)
-        Me.grbSize.Name = "grbSize"
-        Me.grbSize.Size = New System.Drawing.Size(364, 57)
-        Me.grbSize.TabIndex = 7
-        Me.grbSize.TabStop = False
-        Me.grbSize.Text = "Size"
-        '
-        'rdbGrande
-        '
-        Me.rdbGrande.AutoSize = True
-        Me.rdbGrande.Location = New System.Drawing.Point(31, 20)
-        Me.rdbGrande.Name = "rdbGrande"
-        Me.rdbGrande.Size = New System.Drawing.Size(149, 27)
-        Me.rdbGrande.TabIndex = 0
-        Me.rdbGrande.TabStop = True
-        Me.rdbGrande.Text = "39 - Grande (22oz)"
-        Me.rdbGrande.UseVisualStyleBackColor = True
-        '
-        'rdbMedio
-        '
-        Me.rdbMedio.AutoSize = True
-        Me.rdbMedio.Location = New System.Drawing.Point(200, 20)
-        Me.rdbMedio.Name = "rdbMedio"
-        Me.rdbMedio.Size = New System.Drawing.Size(136, 27)
-        Me.rdbMedio.TabIndex = 1
-        Me.rdbMedio.TabStop = True
-        Me.rdbMedio.Text = "29 - Medio (16oz)"
-        Me.rdbMedio.UseVisualStyleBackColor = True
-        '
-        'lblItemName
-        '
-        Me.lblItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblItemName.Font = New System.Drawing.Font("Poppins", 12.0!)
-        Me.lblItemName.ForeColor = System.Drawing.Color.White
-        Me.lblItemName.Location = New System.Drawing.Point(24, 20)
-        Me.lblItemName.Name = "lblItemName"
-        Me.lblItemName.Size = New System.Drawing.Size(175, 28)
-        Me.lblItemName.TabIndex = 0
-        Me.lblItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Black
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(561, 20)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 28)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "BACK"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.POS_With_Database.My.Resources.Resources.big_brew
-        Me.PictureBox1.Location = New System.Drawing.Point(24, 120)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(264, 258)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'picLogo
-        '
-        Me.picLogo.Image = Global.POS_With_Database.My.Resources.Resources.Bigbrew_logo
-        Me.picLogo.Location = New System.Drawing.Point(336, 143)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(700, 351)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLogo.TabIndex = 0
-        Me.picLogo.TabStop = False
-        Me.picLogo.Visible = False
-        '
-        'numQuantity
-        '
-        Me.numQuantity.Font = New System.Drawing.Font("Poppins", 12.0!)
-        Me.numQuantity.Location = New System.Drawing.Point(310, 125)
-        Me.numQuantity.Name = "numQuantity"
-        Me.numQuantity.Size = New System.Drawing.Size(364, 31)
-        Me.numQuantity.TabIndex = 8
         '
         'grbAddon
         '
@@ -487,55 +370,15 @@ Partial Class POS
         Me.grbAddon.TabStop = False
         Me.grbAddon.Text = "Add-ons"
         '
-        'chkPearl
+        'chkOreo
         '
-        Me.chkPearl.AutoSize = True
-        Me.chkPearl.Location = New System.Drawing.Point(24, 28)
-        Me.chkPearl.Name = "chkPearl"
-        Me.chkPearl.Size = New System.Drawing.Size(62, 27)
-        Me.chkPearl.TabIndex = 0
-        Me.chkPearl.Text = "Pearl"
-        Me.chkPearl.UseVisualStyleBackColor = True
-        '
-        'chkCrystal
-        '
-        Me.chkCrystal.AutoSize = True
-        Me.chkCrystal.Location = New System.Drawing.Point(123, 28)
-        Me.chkCrystal.Name = "chkCrystal"
-        Me.chkCrystal.Size = New System.Drawing.Size(75, 27)
-        Me.chkCrystal.TabIndex = 1
-        Me.chkCrystal.Text = "Crystal"
-        Me.chkCrystal.UseVisualStyleBackColor = True
-        '
-        'chkCoffeeJelly
-        '
-        Me.chkCoffeeJelly.AutoSize = True
-        Me.chkCoffeeJelly.Location = New System.Drawing.Point(228, 28)
-        Me.chkCoffeeJelly.Name = "chkCoffeeJelly"
-        Me.chkCoffeeJelly.Size = New System.Drawing.Size(102, 27)
-        Me.chkCoffeeJelly.TabIndex = 2
-        Me.chkCoffeeJelly.Text = "Coffee Jelly"
-        Me.chkCoffeeJelly.UseVisualStyleBackColor = True
-        '
-        'chkCreamCheese
-        '
-        Me.chkCreamCheese.AutoSize = True
-        Me.chkCreamCheese.Location = New System.Drawing.Point(45, 61)
-        Me.chkCreamCheese.Name = "chkCreamCheese"
-        Me.chkCreamCheese.Size = New System.Drawing.Size(126, 27)
-        Me.chkCreamCheese.TabIndex = 3
-        Me.chkCreamCheese.Text = "Cream Cheese"
-        Me.chkCreamCheese.UseVisualStyleBackColor = True
-        '
-        'chkCheeseCake
-        '
-        Me.chkCheeseCake.AutoSize = True
-        Me.chkCheeseCake.Location = New System.Drawing.Point(204, 61)
-        Me.chkCheeseCake.Name = "chkCheeseCake"
-        Me.chkCheeseCake.Size = New System.Drawing.Size(115, 27)
-        Me.chkCheeseCake.TabIndex = 4
-        Me.chkCheeseCake.Text = "Cheese Cake"
-        Me.chkCheeseCake.UseVisualStyleBackColor = True
+        Me.chkOreo.AutoSize = True
+        Me.chkOreo.Location = New System.Drawing.Point(188, 94)
+        Me.chkOreo.Name = "chkOreo"
+        Me.chkOreo.Size = New System.Drawing.Size(118, 27)
+        Me.chkOreo.TabIndex = 6
+        Me.chkOreo.Text = "Crushed Oreo"
+        Me.chkOreo.UseVisualStyleBackColor = True
         '
         'chkCreamPuff
         '
@@ -547,15 +390,166 @@ Partial Class POS
         Me.chkCreamPuff.Text = "Cream Puff"
         Me.chkCreamPuff.UseVisualStyleBackColor = True
         '
-        'chkOreo
+        'chkCheeseCake
         '
-        Me.chkOreo.AutoSize = True
-        Me.chkOreo.Location = New System.Drawing.Point(188, 94)
-        Me.chkOreo.Name = "chkOreo"
-        Me.chkOreo.Size = New System.Drawing.Size(118, 27)
-        Me.chkOreo.TabIndex = 6
-        Me.chkOreo.Text = "Crushed Oreo"
-        Me.chkOreo.UseVisualStyleBackColor = True
+        Me.chkCheeseCake.AutoSize = True
+        Me.chkCheeseCake.Location = New System.Drawing.Point(204, 61)
+        Me.chkCheeseCake.Name = "chkCheeseCake"
+        Me.chkCheeseCake.Size = New System.Drawing.Size(115, 27)
+        Me.chkCheeseCake.TabIndex = 4
+        Me.chkCheeseCake.Text = "Cheese Cake"
+        Me.chkCheeseCake.UseVisualStyleBackColor = True
+        '
+        'chkCreamCheese
+        '
+        Me.chkCreamCheese.AutoSize = True
+        Me.chkCreamCheese.Location = New System.Drawing.Point(45, 61)
+        Me.chkCreamCheese.Name = "chkCreamCheese"
+        Me.chkCreamCheese.Size = New System.Drawing.Size(126, 27)
+        Me.chkCreamCheese.TabIndex = 3
+        Me.chkCreamCheese.Text = "Cream Cheese"
+        Me.chkCreamCheese.UseVisualStyleBackColor = True
+        '
+        'chkCoffeeJelly
+        '
+        Me.chkCoffeeJelly.AutoSize = True
+        Me.chkCoffeeJelly.Location = New System.Drawing.Point(228, 28)
+        Me.chkCoffeeJelly.Name = "chkCoffeeJelly"
+        Me.chkCoffeeJelly.Size = New System.Drawing.Size(102, 27)
+        Me.chkCoffeeJelly.TabIndex = 2
+        Me.chkCoffeeJelly.Text = "Coffee Jelly"
+        Me.chkCoffeeJelly.UseVisualStyleBackColor = True
+        '
+        'chkCrystal
+        '
+        Me.chkCrystal.AutoSize = True
+        Me.chkCrystal.Location = New System.Drawing.Point(123, 28)
+        Me.chkCrystal.Name = "chkCrystal"
+        Me.chkCrystal.Size = New System.Drawing.Size(75, 27)
+        Me.chkCrystal.TabIndex = 1
+        Me.chkCrystal.Text = "Crystal"
+        Me.chkCrystal.UseVisualStyleBackColor = True
+        '
+        'chkPearl
+        '
+        Me.chkPearl.AutoSize = True
+        Me.chkPearl.Location = New System.Drawing.Point(24, 28)
+        Me.chkPearl.Name = "chkPearl"
+        Me.chkPearl.Size = New System.Drawing.Size(62, 27)
+        Me.chkPearl.TabIndex = 0
+        Me.chkPearl.Text = "Pearl"
+        Me.chkPearl.UseVisualStyleBackColor = True
+        '
+        'numQuantity
+        '
+        Me.numQuantity.Font = New System.Drawing.Font("Poppins", 12.0!)
+        Me.numQuantity.Location = New System.Drawing.Point(310, 125)
+        Me.numQuantity.Name = "numQuantity"
+        Me.numQuantity.Size = New System.Drawing.Size(364, 31)
+        Me.numQuantity.TabIndex = 8
+        '
+        'grbSize
+        '
+        Me.grbSize.Controls.Add(Me.rdbMedio)
+        Me.grbSize.Controls.Add(Me.rdbGrande)
+        Me.grbSize.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grbSize.ForeColor = System.Drawing.Color.White
+        Me.grbSize.Location = New System.Drawing.Point(310, 162)
+        Me.grbSize.Name = "grbSize"
+        Me.grbSize.Size = New System.Drawing.Size(364, 57)
+        Me.grbSize.TabIndex = 7
+        Me.grbSize.TabStop = False
+        Me.grbSize.Text = "Size"
+        '
+        'rdbMedio
+        '
+        Me.rdbMedio.AutoSize = True
+        Me.rdbMedio.Location = New System.Drawing.Point(200, 20)
+        Me.rdbMedio.Name = "rdbMedio"
+        Me.rdbMedio.Size = New System.Drawing.Size(136, 27)
+        Me.rdbMedio.TabIndex = 1
+        Me.rdbMedio.TabStop = True
+        Me.rdbMedio.Text = "29 - Medio (16oz)"
+        Me.rdbMedio.UseVisualStyleBackColor = True
+        '
+        'rdbGrande
+        '
+        Me.rdbGrande.AutoSize = True
+        Me.rdbGrande.Location = New System.Drawing.Point(31, 20)
+        Me.rdbGrande.Name = "rdbGrande"
+        Me.rdbGrande.Size = New System.Drawing.Size(149, 27)
+        Me.rdbGrande.TabIndex = 0
+        Me.rdbGrande.TabStop = True
+        Me.rdbGrande.Text = "39 - Grande (22oz)"
+        Me.rdbGrande.UseVisualStyleBackColor = True
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.Black
+        Me.btnAdd.Location = New System.Drawing.Point(310, 366)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(364, 36)
+        Me.btnAdd.TabIndex = 6
+        Me.btnAdd.Text = "Add Order"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(306, 99)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 23)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Quantity"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.POS_With_Database.My.Resources.Resources.big_brew
+        Me.PictureBox1.Location = New System.Drawing.Point(24, 120)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(264, 258)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Black
+        Me.Panel6.Controls.Add(Me.btnBack)
+        Me.Panel6.Controls.Add(Me.lblItemName)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(700, 67)
+        Me.Panel6.TabIndex = 0
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.Black
+        Me.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.btnBack.Location = New System.Drawing.Point(561, 20)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(113, 28)
+        Me.btnBack.TabIndex = 9
+        Me.btnBack.Text = "BACK"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
+        'lblItemName
+        '
+        Me.lblItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblItemName.Font = New System.Drawing.Font("Poppins", 12.0!)
+        Me.lblItemName.ForeColor = System.Drawing.Color.White
+        Me.lblItemName.Location = New System.Drawing.Point(24, 20)
+        Me.lblItemName.Name = "lblItemName"
+        Me.lblItemName.Size = New System.Drawing.Size(175, 28)
+        Me.lblItemName.TabIndex = 0
+        Me.lblItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'dtRetailer
         '
@@ -574,6 +568,17 @@ Partial Class POS
         Me.dtRetailer.ShowEditingIcon = False
         Me.dtRetailer.Size = New System.Drawing.Size(315, 58)
         Me.dtRetailer.TabIndex = 11
+        '
+        'picLogo
+        '
+        Me.picLogo.Image = Global.POS_With_Database.My.Resources.Resources.Bigbrew_logo
+        Me.picLogo.Location = New System.Drawing.Point(336, 143)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(700, 351)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
+        Me.picLogo.Visible = False
         '
         'POS
         '
@@ -607,15 +612,15 @@ Partial Class POS
         Me.Panel4.ResumeLayout(False)
         Me.pnlAddOrder.ResumeLayout(False)
         Me.pnlAddOrder.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
+        Me.grbAddon.ResumeLayout(False)
+        Me.grbAddon.PerformLayout()
+        CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbSize.ResumeLayout(False)
         Me.grbSize.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grbAddon.ResumeLayout(False)
-        Me.grbAddon.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
         CType(Me.dtRetailer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -637,11 +642,11 @@ Partial Class POS
     Friend WithEvents btnCheckout As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnVoid As Button
-    Friend WithEvents label2 As Label
+    Friend WithEvents lblTtl As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents txtPay As TextBox
     Friend WithEvents lblChange As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblChnge As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lblTotal As Label
     Friend WithEvents pnlAddOrder As Panel
@@ -652,7 +657,7 @@ Partial Class POS
     Friend WithEvents btnAdd As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents lblItemName As Label
     Friend WithEvents numQuantity As NumericUpDown
     Friend WithEvents grbAddon As GroupBox

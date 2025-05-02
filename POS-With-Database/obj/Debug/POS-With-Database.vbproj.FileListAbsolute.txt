@@ -23,4 +23,4 @@ D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_D
 D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.Add_Account.resources
 D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.LoginLogs.resources
 D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.AddItem.resources
-D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.OrderSize.resources
+D:\DAN\CODES\GITHUB\Visual-Basic-Projects\POS-With-Database\obj\Debug\POS_With_Database.DailyHistory.resources

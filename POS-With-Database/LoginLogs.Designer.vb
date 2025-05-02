@@ -70,6 +70,7 @@ Partial Class LoginLogs
         Me.dtLog.AllowUserToAddRows = False
         Me.dtLog.AllowUserToDeleteRows = False
         Me.dtLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtLog.BackgroundColor = System.Drawing.Color.White
         Me.dtLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtLog.Location = New System.Drawing.Point(13, 61)
         Me.dtLog.Name = "dtLog"

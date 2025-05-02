@@ -194,6 +194,7 @@ Partial Class AddItem
         'dtProductName
         '
         Me.dtProductName.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtProductName.BackgroundColor = System.Drawing.Color.White
         Me.dtProductName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtProductName.Location = New System.Drawing.Point(298, 121)
         Me.dtProductName.Name = "dtProductName"

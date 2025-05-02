@@ -96,6 +96,12 @@
     <Compile Include="Admin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DailyHistory.Designer.vb">
+      <DependentUpon>DailyHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DailyHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginLogs.Designer.vb">
       <DependentUpon>LoginLogs.vb</DependentUpon>
     </Compile>
@@ -106,12 +112,6 @@
       <DependentUpon>Manage_Orders.vb</DependentUpon>
     </Compile>
     <Compile Include="Manage_Orders.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrderSize.Designer.vb">
-      <DependentUpon>OrderSize.vb</DependentUpon>
-    </Compile>
-    <Compile Include="OrderSize.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="POS.Designer.vb">
@@ -154,6 +154,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DailyHistory.resx">
+      <DependentUpon>DailyHistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -168,9 +171,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrderSize.resx">
-      <DependentUpon>OrderSize.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.vb</DependentUpon>
