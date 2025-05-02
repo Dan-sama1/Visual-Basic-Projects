@@ -43,7 +43,7 @@ Partial Class Manage_Orders
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(652, 366)
+        Me.btnUpdate.Location = New System.Drawing.Point(652, 323)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(88, 31)
         Me.btnUpdate.TabIndex = 12
@@ -60,7 +60,7 @@ Partial Class Manage_Orders
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(652, 419)
+        Me.btnDelete.Location = New System.Drawing.Point(652, 376)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(88, 31)
         Me.btnDelete.TabIndex = 10
@@ -155,10 +155,10 @@ Partial Class Manage_Orders
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.POS_With_Database.My.Resources.Resources.chat_im_cooked_v0_3z8fc1lv9khe1
-        Me.PictureBox1.Location = New System.Drawing.Point(627, 91)
+        Me.PictureBox1.Image = Global.POS_With_Database.My.Resources.Resources.Bigbrew_Orders
+        Me.PictureBox1.Location = New System.Drawing.Point(620, 141)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(140, 253)
+        Me.PictureBox1.Size = New System.Drawing.Size(147, 156)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False

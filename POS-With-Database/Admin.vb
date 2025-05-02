@@ -6,32 +6,32 @@ Public Class Admin
         ConnectionToDatabase()
 
         Dim query As String = "
-    SELECT 
-        ti.item_id AS 'Item ID',
-        DATE_FORMAT(t.transaction_date, '%Y-%m-%d') AS 'Transact Date',
-        TIME(t.transaction_date) AS 'Transact Time',
-        t.transaction_id AS 'Transact Number',
-        i.item_name AS 'Order Name',
-        s.price AS 'Price',
-        ti.quantity AS 'Quantity',
-        ti.total_price AS 'Total'
-    FROM 
-        tbl_transactions t
-    JOIN 
-        tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
-    JOIN 
-        tbl_items i ON ti.item_id = i.item_id
-    JOIN 
-        tbl_item_sizes s ON ti.size_id = s.size_id
-"
-
+            SELECT 
+                ti.item_id AS 'Item ID',
+                DATE_FORMAT(t.transaction_date, '%Y-%m-%d') AS 'Transact Date',
+                TIME(t.transaction_date) AS 'Transact Time',
+                t.transaction_id AS 'Transact Number',
+                i.item_name AS 'Order Name',
+                s.price AS 'Price',
+                ti.quantity AS 'Quantity',
+                ti.total_price AS 'Total'
+            FROM 
+                tbl_transactions t
+            JOIN 
+                tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
+            JOIN 
+                tbl_items i ON ti.item_id = i.item_id
+            JOIN 
+                tbl_item_sizes s ON ti.size_id = s.size_id
+            ORDER BY 
+                t.transaction_date DESC
+            "
 
         Dim adapter As New MySqlDataAdapter(query, connection)
         Dim table As New DataTable()
         adapter.Fill(table)
 
         dtReport.DataSource = table
-
 
         connection.Close()
     End Sub
@@ -153,28 +153,18 @@ Public Class Admin
 
         connection.Close()
     End Sub
-
-
-    Private Sub lblLogOut_Click(sender As Object, e As EventArgs)
-        Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to Log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If confirm = DialogResult.Yes Then
-            Me.Hide()
-            Form1.Show()
-        End If
-    End Sub
-
+    'REFRESH TABLE
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         LoadTransactionReport()
     End Sub
 
-
+    'SEARCH BAR
     Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
         If Asc(e.KeyChar) = 13 Then
             btnSearch.PerformClick()
         End If
     End Sub
-    'logout
+    'LOGOUT
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to Log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -183,7 +173,7 @@ Public Class Admin
             Form1.Show()
         End If
     End Sub
-
+    'MANAGE ORDERS
     Private Sub btnManage_Click(sender As Object, e As EventArgs) Handles btnManage.Click
         Manage_Orders.dtReport.DataSource = Me.dtReport.DataSource
 
@@ -201,18 +191,22 @@ Public Class Admin
             dtReport.Columns("Item ID").Visible = False
         End If
     End Sub
-
+    'ADD ACC
     Private Sub btnAddAccount_Click(sender As Object, e As EventArgs) Handles btnAddAccount.Click
         Add_Account.ShowDialog()
     End Sub
-
+    'LOGIN LOGS
     Private Sub btnLogs_Click(sender As Object, e As EventArgs) Handles btnLogs.Click
         LoginLogs.ShowDialog()
     End Sub
-
+    'ADD ITEMS
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
         AddItem.ShowDialog()
     End Sub
-
-
 End Class
+
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA

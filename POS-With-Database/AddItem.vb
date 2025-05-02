@@ -12,7 +12,7 @@ Public Class AddItem
         dtProductName.ClearSelection()
         txtName.Focus()
     End Sub
-
+    'LOAD ITEMS
     Private Sub loadItems()
         ConnectionToDatabase()
 
@@ -40,6 +40,7 @@ Public Class AddItem
     End Sub
     'EXIT
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        cleaner()
         Me.Hide()
         Admin.Show()
     End Sub
@@ -258,3 +259,9 @@ Public Class AddItem
         End If
     End Sub
 End Class
+
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA

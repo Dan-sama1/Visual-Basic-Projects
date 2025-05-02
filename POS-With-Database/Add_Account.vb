@@ -62,7 +62,7 @@ Public Class Add_Account
             connection.Close()
         End Try
     End Sub
-
+    'FORM
     Private Sub Add_Account_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cboRole.Items.Clear()
         cboRole.Items.Add("cashier")
@@ -73,7 +73,7 @@ Public Class Add_Account
         AddHandler txtConfirmPass.TextChanged, AddressOf textfields
     End Sub
 
-
+    'HANDLERS
     Private Sub textfields()
         If txtUsername.Text <> "" AndAlso txtPassword.Text <> "" AndAlso txtConfirmPass.Text <> "" Then
             cboRole.Enabled = True
@@ -82,7 +82,7 @@ Public Class Add_Account
             cboRole.Enabled = False
         End If
     End Sub
-
+    'PASSWORD
     Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
         If txtPassword.Text <> "" Then
             chkShowPass.Visible = True
@@ -90,7 +90,7 @@ Public Class Add_Account
             chkShowPass.Visible = False
         End If
     End Sub
-
+    'CONFIRM PASS
     Private Sub txtConfirmPass_TextChanged(sender As Object, e As EventArgs) Handles txtConfirmPass.TextChanged
         If txtConfirmPass.Text <> "" Then
             chkShowPass2.Visible = True
@@ -98,7 +98,7 @@ Public Class Add_Account
             chkShowPass2.Visible = False
         End If
     End Sub
-
+    'CHK BOX
     Private Sub chkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass.CheckedChanged
         If chkShowPass.Checked Then
             txtPassword.UseSystemPasswordChar = False
@@ -106,7 +106,7 @@ Public Class Add_Account
             txtPassword.UseSystemPasswordChar = True
         End If
     End Sub
-
+    'CHK BOX 2
     Private Sub chkShowPass2_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass2.CheckedChanged
         If chkShowPass2.Checked Then
             txtConfirmPass.UseSystemPasswordChar = False
@@ -114,9 +114,15 @@ Public Class Add_Account
             txtConfirmPass.UseSystemPasswordChar = True
         End If
     End Sub
-
+    'BACK
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         clean()
         Me.Close()
     End Sub
 End Class
+
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA

@@ -46,6 +46,7 @@ Partial Class POS
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.pnlAddOrder = New System.Windows.Forms.Panel()
+        Me.btnEditOrder = New System.Windows.Forms.Button()
         Me.grbAddon = New System.Windows.Forms.GroupBox()
         Me.chkOreo = New System.Windows.Forms.CheckBox()
         Me.chkCreamPuff = New System.Windows.Forms.CheckBox()
@@ -66,6 +67,7 @@ Partial Class POS
         Me.lblItemName = New System.Windows.Forms.Label()
         Me.dtRetailer = New System.Windows.Forms.DataGridView()
         Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dtOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -133,6 +135,8 @@ Partial Class POS
         '
         'dtOrders
         '
+        Me.dtOrders.AllowDrop = True
+        Me.dtOrders.AllowUserToOrderColumns = True
         Me.dtOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dtOrders.BackgroundColor = System.Drawing.Color.White
         Me.dtOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -339,6 +343,7 @@ Partial Class POS
         '
         'pnlAddOrder
         '
+        Me.pnlAddOrder.Controls.Add(Me.btnEditOrder)
         Me.pnlAddOrder.Controls.Add(Me.grbAddon)
         Me.pnlAddOrder.Controls.Add(Me.numQuantity)
         Me.pnlAddOrder.Controls.Add(Me.grbSize)
@@ -351,6 +356,19 @@ Partial Class POS
         Me.pnlAddOrder.Size = New System.Drawing.Size(700, 415)
         Me.pnlAddOrder.TabIndex = 10
         Me.pnlAddOrder.Visible = False
+        '
+        'btnEditOrder
+        '
+        Me.btnEditOrder.Enabled = False
+        Me.btnEditOrder.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditOrder.ForeColor = System.Drawing.Color.Black
+        Me.btnEditOrder.Location = New System.Drawing.Point(310, 366)
+        Me.btnEditOrder.Name = "btnEditOrder"
+        Me.btnEditOrder.Size = New System.Drawing.Size(364, 36)
+        Me.btnEditOrder.TabIndex = 9
+        Me.btnEditOrder.Text = "Edit Order"
+        Me.btnEditOrder.UseVisualStyleBackColor = True
+        Me.btnEditOrder.Visible = False
         '
         'grbAddon
         '
@@ -518,6 +536,7 @@ Partial Class POS
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Black
+        Me.Panel6.Controls.Add(Me.btnCancel)
         Me.Panel6.Controls.Add(Me.btnBack)
         Me.Panel6.Controls.Add(Me.lblItemName)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
@@ -580,16 +599,32 @@ Partial Class POS
         Me.picLogo.TabStop = False
         Me.picLogo.Visible = False
         '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.Black
+        Me.btnCancel.Enabled = False
+        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCancel.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.btnCancel.Location = New System.Drawing.Point(442, 20)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(124, 28)
+        Me.btnCancel.TabIndex = 10
+        Me.btnCancel.Text = "CANCEL EDIT"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnCancel.Visible = False
+        '
         'POS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1048, 569)
-        Me.Controls.Add(Me.dtRetailer)
         Me.Controls.Add(Me.pnlAddOrder)
-        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.picLogo)
+        Me.Controls.Add(Me.dtRetailer)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnFruitTea)
         Me.Controls.Add(Me.Panel3)
@@ -669,4 +704,6 @@ Partial Class POS
     Friend WithEvents chkCrystal As CheckBox
     Friend WithEvents chkPearl As CheckBox
     Friend WithEvents dtRetailer As DataGridView
+    Friend WithEvents btnEditOrder As Button
+    Friend WithEvents btnCancel As Button
 End Class

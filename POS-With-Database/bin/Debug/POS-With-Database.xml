@@ -22,12 +22,22 @@ POS-With-Database
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:POS_With_Database.My.Resources.Resources.admin">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:POS_With_Database.My.Resources.Resources.big_brew">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:POS_With_Database.My.Resources.Resources.Bigbrew_logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:POS_With_Database.My.Resources.Resources.Bigbrew_Orders">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

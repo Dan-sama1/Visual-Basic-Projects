@@ -32,7 +32,6 @@ Partial Class Admin
         Me.btnAddAccount = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblTodaySales = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -44,6 +43,7 @@ Partial Class Admin
         Me.btnLogs = New System.Windows.Forms.Button()
         Me.btnAddItem = New System.Windows.Forms.Button()
         Me.picMilkTea = New System.Windows.Forms.PictureBox()
+        Me.btnLogout = New System.Windows.Forms.Button()
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -153,19 +153,6 @@ Partial Class Admin
         Me.Panel1.Size = New System.Drawing.Size(1006, 59)
         Me.Panel1.TabIndex = 15
         '
-        'btnLogout
-        '
-        Me.btnLogout.BackColor = System.Drawing.Color.Black
-        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnLogout.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.Location = New System.Drawing.Point(862, 13)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(113, 28)
-        Me.btnLogout.TabIndex = 2
-        Me.btnLogout.Text = "LOG OUT"
-        Me.btnLogout.UseVisualStyleBackColor = False
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
@@ -269,13 +256,26 @@ Partial Class Admin
         '
         'picMilkTea
         '
-        Me.picMilkTea.Image = Global.POS_With_Database.My.Resources.Resources.cooked2
+        Me.picMilkTea.Image = Global.POS_With_Database.My.Resources.Resources.admin
         Me.picMilkTea.Location = New System.Drawing.Point(682, 88)
         Me.picMilkTea.Name = "picMilkTea"
         Me.picMilkTea.Size = New System.Drawing.Size(294, 250)
         Me.picMilkTea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picMilkTea.TabIndex = 6
         Me.picMilkTea.TabStop = False
+        '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLogout.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Location = New System.Drawing.Point(862, 13)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(113, 28)
+        Me.btnLogout.TabIndex = 2
+        Me.btnLogout.Text = "LOG OUT"
+        Me.btnLogout.UseVisualStyleBackColor = False
         '
         'Admin
         '
@@ -332,8 +332,8 @@ Partial Class Admin
     Friend WithEvents lblMonthlySales As Label
     Friend WithEvents btnRefresh As Button
     Friend WithEvents dtpDate As DateTimePicker
-    Friend WithEvents btnLogout As Button
     Public WithEvents dtReport As DataGridView
     Friend WithEvents btnLogs As Button
     Friend WithEvents btnAddItem As Button
+    Friend WithEvents btnLogout As Button
 End Class

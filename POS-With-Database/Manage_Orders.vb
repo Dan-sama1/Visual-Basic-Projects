@@ -7,24 +7,26 @@ Public Class Manage_Orders
         ConnectionToDatabase()
 
         Dim query As String = "
-    SELECT 
-        ti.item_id AS 'Item ID',
-        DATE_FORMAT(t.transaction_date, '%Y-%m-%d') AS 'Transact Date',
-        TIME(t.transaction_date) AS 'Transact Time',
-        t.transaction_id AS 'Transact Number',
-        i.item_name AS 'Order Name',
-        s.price AS 'Price',
-        ti.quantity AS 'Quantity',
-        ti.total_price AS 'Total'
-    FROM 
-        tbl_transactions t
-    JOIN 
-        tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
-    JOIN 
-        tbl_items i ON ti.item_id = i.item_id
-    JOIN 
-        tbl_item_sizes s ON ti.size_id = s.size_id
-"
+            SELECT 
+                ti.item_id AS 'Item ID',
+                DATE_FORMAT(t.transaction_date, '%Y-%m-%d') AS 'Transact Date',
+                TIME(t.transaction_date) AS 'Transact Time',
+                t.transaction_id AS 'Transact Number',
+                i.item_name AS 'Order Name',
+                s.price AS 'Price',
+                ti.quantity AS 'Quantity',
+                ti.total_price AS 'Total'
+            FROM 
+                tbl_transactions t
+            JOIN 
+                tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
+            JOIN 
+                tbl_items i ON ti.item_id = i.item_id
+            JOIN 
+                tbl_item_sizes s ON ti.size_id = s.size_id
+            ORDER BY 
+                t.transaction_date DESC
+            "
 
         Dim adapter As New MySqlDataAdapter(query, connection)
         Dim table As New DataTable()
@@ -33,8 +35,8 @@ Public Class Manage_Orders
         dtReport.DataSource = table
 
         connection.Close()
-
     End Sub
+
     'HIDE ITEM ID
     Private Sub dtReport_DataBindingComplete(sender As Object, e As DataGridViewBindingCompleteEventArgs) Handles dtReport.DataBindingComplete
         If dtReport.Columns.Contains("Item ID") Then
@@ -123,7 +125,6 @@ Public Class Manage_Orders
             connection.Close()
         End Try
     End Sub
-
 
 
     'DELETE
@@ -244,10 +245,16 @@ Public Class Manage_Orders
     End Sub
     'REFRESH
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        txtSearch.Clear()
+        txtSearch.Focus()
         LoadTransactionReport()
     End Sub
     'EXIT
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+
+        txtSearch.Clear()
+        txtSearch.Focus()
+
         Me.Hide()
         Admin.Show()
     End Sub
@@ -258,6 +265,7 @@ Public Class Manage_Orders
             btnSearch.PerformClick()
         End If
     End Sub
+    'INFO
     Private Sub btnInfo_Click(sender As Object, e As EventArgs) Handles btnInfo.Click
         ToolTip1.SetToolTip(btnInfo, "Click here for more information about managing orders.")
 
@@ -265,3 +273,9 @@ Public Class Manage_Orders
     End Sub
 
 End Class
+
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA

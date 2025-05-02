@@ -200,5 +200,11 @@
   <ItemGroup>
     <None Include="rsc\big-brew.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="rsc\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rsc\Bigbrew-Orders.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

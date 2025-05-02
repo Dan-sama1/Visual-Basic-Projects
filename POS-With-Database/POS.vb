@@ -502,5 +502,190 @@ Public Class POS
             End Try
         End If
     End Sub
+    'VOID BUTTON
+    Private Sub btnVoid_Click(sender As Object, e As EventArgs) Handles btnVoid.Click
+        Dim voidConf As DialogResult = MessageBox.Show("Are you sure you want to Void Order?", "Void", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
+        If voidConf = DialogResult.Yes Then
+            ' CLEAR
+            cleaner()
+
+            dtRetailer.DataSource = Nothing
+            dtOrders.Rows.Clear()
+
+            txtPay.Clear()
+            lblTotal.Text = ""
+            lblChange.Text = ""
+            lblTtl.Visible = False
+            lblTotal.Visible = False
+            lblChange.Visible = False
+            lblChnge.Visible = False
+
+            txtPay.Enabled = False
+            picLogo.Visible = True
+        End If
+
+    End Sub
+
+    'EDIT BUTTON
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        ' CHECK IF ROW IS SELECTED
+        If dtOrders.SelectedRows.Count > 0 Then
+            'SELETED ROW
+            Dim selectedRow As DataGridViewRow = dtOrders.SelectedRows(0)
+
+            ' CHECK IF ROW IS NOT EMPTY
+            If selectedRow.Cells("itemName").Value IsNot Nothing AndAlso selectedRow.Cells("itemName").Value.ToString() <> String.Empty Then
+
+                'DETAILS
+                Dim itemName As String = selectedRow.Cells("itemName").Value.ToString()
+                Dim quantity As Integer = If(selectedRow.Cells("quantity").Value IsNot DBNull.Value, CInt(selectedRow.Cells("quantity").Value), 0)
+                Dim totalPrice As Decimal = If(selectedRow.Cells("amount").Value IsNot DBNull.Value, CDec(selectedRow.Cells("amount").Value), 0D)
+                Dim unitPrice As Decimal = If(selectedRow.Cells("unitPrice").Value IsNot DBNull.Value, CDec(selectedRow.Cells("unitPrice").Value), 0D)
+
+                lblItemName.Text = itemName
+                numQuantity.Value = quantity
+
+                ' CALCULATE SIZE IF IT MATCHES PRICE
+                If totalPrice / quantity = unitPrice Then
+                    rdbMedio.Checked = True
+                ElseIf totalPrice / quantity = unitPrice + 9D Then
+                    rdbGrande.Checked = True
+                End If
+
+                ' CLEAR
+                chkPearl.Checked = False
+                chkCrystal.Checked = False
+                chkCoffeeJelly.Checked = False
+                chkCreamCheese.Checked = False
+                chkCheeseCake.Checked = False
+                chkCreamPuff.Checked = False
+                chkOreo.Checked = False
+
+                'ADD ONS
+                Dim addonTotal As Decimal = totalPrice - (unitPrice * quantity)
+                If addonTotal > 0 Then
+                    For Each chk As CheckBox In {chkPearl, chkCrystal, chkCoffeeJelly, chkCreamCheese, chkCheeseCake, chkCreamPuff, chkOreo}
+                        chk.Checked = True
+                        addonTotal -= 9D
+                    Next
+                End If
+
+                ' DISPLAY BTN AND SHTS
+                pnlAddOrder.Visible = True
+                btnEditOrder.Visible = True
+                btnEditOrder.Enabled = True
+                btnCancel.Visible = True
+                btnCancel.Enabled = True
+            Else
+                MessageBox.Show("The selected row is empty. Please select a valid order.", "Empty Row", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Else
+            MessageBox.Show("Please select an order to edit.", "No Order Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    'EDIT ORDERS BUTTON
+    Private Sub btnEditOrder_Click(sender As Object, e As EventArgs) Handles btnEditOrder.Click
+        ' CHECK IF SIZE IS NOT EMPTY
+        Dim selectedSize As String = ""
+
+        If rdbMedio.Checked Then
+            selectedSize = "Medio"
+        ElseIf rdbGrande.Checked Then
+            selectedSize = "Grande"
+        Else
+            MessageBox.Show("Please select a size.", "Size Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' PROCEED IF NOT EMPTY
+        If dtOrders.SelectedRows.Count > 0 Then
+
+            'GET SELECTED ROW
+            Dim selectedRow As DataGridViewRow = dtOrders.SelectedRows(0)
+
+            ' NEW VALUE
+            Dim newItemName As String = lblItemName.Text
+            Dim newQuantity As Integer = CInt(numQuantity.Value)
+            Dim newSizePrice As Decimal = If(rdbMedio.Checked, 29D, 39D)
+            Dim addonTotal As Decimal = 0D
+            Dim selectedAddons As New List(Of String)
+
+            'CALCULATE ADD ON
+            Dim addonCheckboxes As CheckBox() = {
+            chkPearl, chkCrystal, chkCoffeeJelly, chkCreamCheese,
+            chkCheeseCake, chkCreamPuff, chkOreo
+        }
+
+            For Each chk As CheckBox In addonCheckboxes
+                If chk.Checked Then
+                    addonTotal += 9D
+                    selectedAddons.Add(chk.Text)
+                End If
+            Next
+
+            ' TOTAL PRICE FORMULA
+            Dim newTotalPrice As Decimal = (newSizePrice + addonTotal) * newQuantity
+
+            'UPDATE ROW
+            selectedRow.Cells("itemName").Value = newItemName
+            selectedRow.Cells("quantity").Value = newQuantity
+            selectedRow.Cells("unitPrice").Value = newSizePrice
+            selectedRow.Cells("amount").Value = newTotalPrice
+
+            ' UPDATE TOTAL LABEL
+            UpdateTotalLabel()
+
+            ' HIDE EDIT PARTS
+            pnlAddOrder.Visible = False
+            btnEditOrder.Visible = False
+            btnEditOrder.Enabled = False
+
+            MessageBox.Show("Order updated successfully.", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Please select an order to edit.", "No Order Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+
+    Private Sub dtOrders_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtOrders.CellClick
+        ' CHECK IF ROW IS SELECTED
+        If e.RowIndex >= 0 Then
+
+            ' SELECT WHOLE LINE
+            dtOrders.Rows(e.RowIndex).Selected = True
+        End If
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        ' HIDE PNL
+        pnlAddOrder.Visible = False
+        btnCancel.Visible = False
+        btnCancel.Enabled = False
+
+        'RESET SOME FIELDS
+        lblItemName.Text = String.Empty
+        numQuantity.Value = 0
+        rdbMedio.Checked = False
+        rdbGrande.Checked = False
+        chkPearl.Checked = False
+        chkCrystal.Checked = False
+        chkCoffeeJelly.Checked = False
+        chkCreamCheese.Checked = False
+        chkCheeseCake.Checked = False
+        chkCreamPuff.Checked = False
+        chkOreo.Checked = False
+
+        'EDIT ORDER
+        btnEditOrder.Visible = False
+        btnEditOrder.Enabled = False
+
+        MessageBox.Show("Editing cancelled.", "Edit Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 End Class
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
+'CREATED BY: ALEX DANIEL P. BARRAMEDA
