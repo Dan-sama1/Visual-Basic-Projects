@@ -185,11 +185,11 @@ Partial Class POS
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 21)
+        Me.Label3.Location = New System.Drawing.Point(22, 21)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(136, 23)
+        Me.Label3.Size = New System.Drawing.Size(123, 23)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Recieved Ammount"
+        Me.Label3.Text = "Recieved Amount"
         '
         'flpItemName
         '
