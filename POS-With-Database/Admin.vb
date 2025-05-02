@@ -149,7 +149,6 @@ Public Class Admin
         dtReport.DataSource = table
 
         connection.Close()
-        txtSearch.Clear()
     End Sub
 
 
@@ -203,4 +202,13 @@ Public Class Admin
     Private Sub btnAddAccount_Click(sender As Object, e As EventArgs) Handles btnAddAccount.Click
         Add_Account.ShowDialog()
     End Sub
+
+    Private Sub btnLogs_Click(sender As Object, e As EventArgs) Handles btnLogs.Click
+        LoginLogs.ShowDialog()
+    End Sub
+
+    Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
+        AddItem.ShowDialog()
+    End Sub
+
 End Class

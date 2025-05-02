@@ -78,6 +78,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddItem.Designer.vb">
+      <DependentUpon>AddItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Add_Account.Designer.vb">
       <DependentUpon>Add_Account.vb</DependentUpon>
     </Compile>
@@ -90,10 +96,22 @@
     <Compile Include="Admin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoginLogs.Designer.vb">
+      <DependentUpon>LoginLogs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginLogs.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Manage_Orders.Designer.vb">
       <DependentUpon>Manage_Orders.vb</DependentUpon>
     </Compile>
     <Compile Include="Manage_Orders.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderSize.Designer.vb">
+      <DependentUpon>OrderSize.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSize.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="POS.Designer.vb">
@@ -127,6 +145,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddItem.resx">
+      <DependentUpon>AddItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Account.resx">
       <DependentUpon>Add_Account.vb</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +157,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginLogs.resx">
+      <DependentUpon>LoginLogs.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manage_Orders.resx">
       <DependentUpon>Manage_Orders.vb</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +168,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderSize.resx">
+      <DependentUpon>OrderSize.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.vb</DependentUpon>
@@ -163,6 +190,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="rsc\cooked2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rsc\Bigbrew_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rsc\Chocolate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rsc\big-brew.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

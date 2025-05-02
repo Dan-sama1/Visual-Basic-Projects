@@ -41,6 +41,8 @@ Partial Class Admin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+        Me.btnLogs = New System.Windows.Forms.Button()
+        Me.btnAddItem = New System.Windows.Forms.Button()
         Me.picMilkTea = New System.Windows.Forms.PictureBox()
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -112,7 +114,7 @@ Partial Class Admin
         '
         Me.btnManage.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.btnManage.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnManage.Location = New System.Drawing.Point(687, 477)
+        Me.btnManage.Location = New System.Drawing.Point(682, 477)
         Me.btnManage.Name = "btnManage"
         Me.btnManage.Size = New System.Drawing.Size(142, 58)
         Me.btnManage.TabIndex = 12
@@ -123,9 +125,9 @@ Partial Class Admin
         '
         Me.btnAddAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.btnAddAccount.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddAccount.Location = New System.Drawing.Point(830, 477)
+        Me.btnAddAccount.Location = New System.Drawing.Point(829, 477)
         Me.btnAddAccount.Name = "btnAddAccount"
-        Me.btnAddAccount.Size = New System.Drawing.Size(142, 58)
+        Me.btnAddAccount.Size = New System.Drawing.Size(143, 58)
         Me.btnAddAccount.TabIndex = 13
         Me.btnAddAccount.Text = "Add Account"
         Me.btnAddAccount.UseVisualStyleBackColor = False
@@ -170,7 +172,7 @@ Partial Class Admin
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.lblTodaySales)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(682, 401)
+        Me.Panel2.Location = New System.Drawing.Point(682, 344)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(142, 70)
         Me.Panel2.TabIndex = 17
@@ -201,7 +203,7 @@ Partial Class Admin
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.lblMonthlySales)
         Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Location = New System.Drawing.Point(830, 401)
+        Me.Panel3.Location = New System.Drawing.Point(830, 344)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(142, 70)
         Me.Panel3.TabIndex = 19
@@ -243,12 +245,34 @@ Partial Class Admin
         Me.dtpDate.Size = New System.Drawing.Size(274, 26)
         Me.dtpDate.TabIndex = 11
         '
+        'btnLogs
+        '
+        Me.btnLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.btnLogs.Font = New System.Drawing.Font("Poppins", 9.75!)
+        Me.btnLogs.Location = New System.Drawing.Point(682, 420)
+        Me.btnLogs.Name = "btnLogs"
+        Me.btnLogs.Size = New System.Drawing.Size(143, 50)
+        Me.btnLogs.TabIndex = 21
+        Me.btnLogs.Text = "View Login Logs"
+        Me.btnLogs.UseVisualStyleBackColor = False
+        '
+        'btnAddItem
+        '
+        Me.btnAddItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.btnAddItem.Font = New System.Drawing.Font("Poppins", 9.75!)
+        Me.btnAddItem.Location = New System.Drawing.Point(829, 420)
+        Me.btnAddItem.Name = "btnAddItem"
+        Me.btnAddItem.Size = New System.Drawing.Size(143, 50)
+        Me.btnAddItem.TabIndex = 22
+        Me.btnAddItem.Text = "Manage Products"
+        Me.btnAddItem.UseVisualStyleBackColor = False
+        '
         'picMilkTea
         '
         Me.picMilkTea.Image = Global.POS_With_Database.My.Resources.Resources.cooked2
         Me.picMilkTea.Location = New System.Drawing.Point(682, 88)
         Me.picMilkTea.Name = "picMilkTea"
-        Me.picMilkTea.Size = New System.Drawing.Size(294, 310)
+        Me.picMilkTea.Size = New System.Drawing.Size(294, 250)
         Me.picMilkTea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picMilkTea.TabIndex = 6
         Me.picMilkTea.TabStop = False
@@ -259,6 +283,8 @@ Partial Class Admin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1008, 561)
+        Me.Controls.Add(Me.btnAddItem)
+        Me.Controls.Add(Me.btnLogs)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label6)
@@ -308,4 +334,6 @@ Partial Class Admin
     Friend WithEvents dtpDate As DateTimePicker
     Friend WithEvents btnLogout As Button
     Public WithEvents dtReport As DataGridView
+    Friend WithEvents btnLogs As Button
+    Friend WithEvents btnAddItem As Button
 End Class

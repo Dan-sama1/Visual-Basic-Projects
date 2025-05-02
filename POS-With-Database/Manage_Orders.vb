@@ -239,13 +239,12 @@ Public Class Manage_Orders
         dtReport.DataSource = table
 
         connection.Close()
-        txtSearch.Clear()
     End Sub
     'REFRESH
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         LoadTransactionReport()
     End Sub
-    'BACK TO ADMIN
+    'EXIT
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Hide()
         Admin.Show()
@@ -262,4 +261,5 @@ Public Class Manage_Orders
 
         MessageBox.Show("Manage orders by EDITING QUANTITY of an order or REMOVING data from customers.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+
 End Class
