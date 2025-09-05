@@ -20,8 +20,9 @@ Public Class AddItem
             SELECT i.item_id, i.item_name, c.category_name 
             FROM tbl_items i 
             JOIN tbl_categories c ON i.category_id = c.category_id
+            WHERE i.is_deleted = FALSE
             ORDER BY i.item_name;
-        "
+            "
 
         Dim adapter As New MySqlDataAdapter(query, connection)
         Dim dt As New DataTable()
@@ -207,20 +208,30 @@ Public Class AddItem
         ' CONFIRM DELETE
         Dim checkResult As DialogResult = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If checkResult = DialogResult.Yes Then
-
-            Dim deleteCommand As New MySqlCommand("DELETE FROM tbl_items WHERE item_id = @id", connection)
-            deleteCommand.Parameters.AddWithValue("@id", productId)
-
             Try
-                deleteCommand.ExecuteNonQuery()
-                MessageBox.Show("Item deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If connection.State = ConnectionState.Closed Then
+                    connection.Open()
+                End If
+
+                ' PERFORM SOFT DELETE
+                Dim softDeleteCommand As New MySqlCommand("UPDATE tbl_items SET is_deleted = TRUE WHERE item_id = @id", connection)
+                softDeleteCommand.Parameters.AddWithValue("@id", productId)
+                softDeleteCommand.ExecuteNonQuery()
+
+                MessageBox.Show("Item deleted (soft delete) successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ' REFRESH
                 loadItems()
                 cleaner()
+
             Catch ex As Exception
                 MessageBox.Show("Error deleting product: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                connection.Close()
             End Try
         End If
     End Sub
+
     'SEARCH
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         ConnectionToDatabase()
@@ -236,7 +247,8 @@ Public Class AddItem
             SELECT i.item_id, i.item_name, c.category_name
             FROM tbl_items i
             JOIN tbl_categories c ON i.category_id = c.category_id
-            WHERE i.item_name LIKE @searchTerm OR c.category_name LIKE @searchTerm
+            WHERE (i.item_name LIKE @searchTerm OR c.category_name LIKE @searchTerm)
+            AND i.is_deleted = FALSE
             ORDER BY i.item_name;
         "
 

@@ -63,11 +63,11 @@ Partial Class POS
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.lblItemName = New System.Windows.Forms.Label()
         Me.dtRetailer = New System.Windows.Forms.DataGridView()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dtOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -79,8 +79,8 @@ Partial Class POS
         Me.grbSize.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
-        CType(Me.dtRetailer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtRetailer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -202,7 +202,6 @@ Partial Class POS
         '
         Me.flpItemName.AutoScroll = True
         Me.flpItemName.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.flpItemName.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flpItemName.Location = New System.Drawing.Point(336, 143)
         Me.flpItemName.Name = "flpItemName"
         Me.flpItemName.Size = New System.Drawing.Size(700, 351)
@@ -545,6 +544,33 @@ Partial Class POS
         Me.Panel6.Size = New System.Drawing.Size(700, 67)
         Me.Panel6.TabIndex = 0
         '
+        'picLogo
+        '
+        Me.picLogo.Image = Global.POS_With_Database.My.Resources.Resources.Bigbrew_logo
+        Me.picLogo.Location = New System.Drawing.Point(336, 143)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(700, 351)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
+        Me.picLogo.Visible = False
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.Black
+        Me.btnCancel.Enabled = False
+        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCancel.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.btnCancel.Location = New System.Drawing.Point(442, 20)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(124, 28)
+        Me.btnCancel.TabIndex = 10
+        Me.btnCancel.Text = "CANCEL EDIT"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnCancel.Visible = False
+        '
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.Black
@@ -588,33 +614,6 @@ Partial Class POS
         Me.dtRetailer.Size = New System.Drawing.Size(315, 58)
         Me.dtRetailer.TabIndex = 11
         '
-        'picLogo
-        '
-        Me.picLogo.Image = Global.POS_With_Database.My.Resources.Resources.Bigbrew_logo
-        Me.picLogo.Location = New System.Drawing.Point(336, 143)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(700, 351)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLogo.TabIndex = 0
-        Me.picLogo.TabStop = False
-        Me.picLogo.Visible = False
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.Color.Black
-        Me.btnCancel.Enabled = False
-        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCancel.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(442, 20)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(124, 28)
-        Me.btnCancel.TabIndex = 10
-        Me.btnCancel.Text = "CANCEL EDIT"
-        Me.btnCancel.UseVisualStyleBackColor = False
-        Me.btnCancel.Visible = False
-        '
         'POS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -654,8 +653,8 @@ Partial Class POS
         Me.grbSize.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
-        CType(Me.dtRetailer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtRetailer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

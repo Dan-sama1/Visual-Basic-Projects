@@ -32,10 +32,12 @@ Partial Class Admin
         Me.btnAddAccount = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblTodaySales = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblMonth = New System.Windows.Forms.Label()
         Me.lblMonthlySales = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
@@ -43,7 +45,8 @@ Partial Class Admin
         Me.btnLogs = New System.Windows.Forms.Button()
         Me.btnAddItem = New System.Windows.Forms.Button()
         Me.picMilkTea = New System.Windows.Forms.PictureBox()
-        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnSort = New System.Windows.Forms.Button()
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -76,13 +79,13 @@ Partial Class Admin
         Me.txtSearch.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearch.Location = New System.Drawing.Point(29, 101)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(254, 31)
+        Me.txtSearch.Size = New System.Drawing.Size(328, 31)
         Me.txtSearch.TabIndex = 3
         '
         'btnSearch
         '
         Me.btnSearch.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(568, 101)
+        Me.btnSearch.Location = New System.Drawing.Point(363, 103)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(76, 30)
         Me.btnSearch.TabIndex = 4
@@ -153,6 +156,19 @@ Partial Class Admin
         Me.Panel1.Size = New System.Drawing.Size(1006, 59)
         Me.Panel1.TabIndex = 15
         '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLogout.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Location = New System.Drawing.Point(862, 13)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(113, 28)
+        Me.btnLogout.TabIndex = 2
+        Me.btnLogout.Text = "LOG OUT"
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(228, Byte), Integer))
@@ -180,13 +196,14 @@ Partial Class Admin
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(142, 19)
         Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Monthly Sales"
+        Me.Label2.Text = "This Month's Sales"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.lblMonth)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.lblMonthlySales)
         Me.Panel3.Controls.Add(Me.Label7)
@@ -195,12 +212,21 @@ Partial Class Admin
         Me.Panel3.Size = New System.Drawing.Size(142, 70)
         Me.Panel3.TabIndex = 19
         '
+        'lblMonth
+        '
+        Me.lblMonth.Font = New System.Drawing.Font("Poppins Medium", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMonth.Location = New System.Drawing.Point(-1, 19)
+        Me.lblMonth.Name = "lblMonth"
+        Me.lblMonth.Size = New System.Drawing.Size(142, 18)
+        Me.lblMonth.TabIndex = 20
+        Me.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'lblMonthlySales
         '
         Me.lblMonthlySales.Font = New System.Drawing.Font("Poppins Medium", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.lblMonthlySales.Location = New System.Drawing.Point(0, 23)
+        Me.lblMonthlySales.Location = New System.Drawing.Point(0, 37)
         Me.lblMonthlySales.Name = "lblMonthlySales"
-        Me.lblMonthlySales.Size = New System.Drawing.Size(142, 42)
+        Me.lblMonthlySales.Size = New System.Drawing.Size(142, 30)
         Me.lblMonthlySales.TabIndex = 19
         Me.lblMonthlySales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -227,9 +253,9 @@ Partial Class Admin
         'dtpDate
         '
         Me.dtpDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpDate.Location = New System.Drawing.Point(288, 105)
+        Me.dtpDate.Location = New System.Drawing.Point(445, 105)
         Me.dtpDate.Name = "dtpDate"
-        Me.dtpDate.Size = New System.Drawing.Size(274, 26)
+        Me.dtpDate.Size = New System.Drawing.Size(117, 26)
         Me.dtpDate.TabIndex = 11
         '
         'btnLogs
@@ -264,18 +290,25 @@ Partial Class Admin
         Me.picMilkTea.TabIndex = 6
         Me.picMilkTea.TabStop = False
         '
-        'btnLogout
+        'Label5
         '
-        Me.btnLogout.BackColor = System.Drawing.Color.Black
-        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnLogout.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.Location = New System.Drawing.Point(862, 13)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(113, 28)
-        Me.btnLogout.TabIndex = 2
-        Me.btnLogout.Text = "LOG OUT"
-        Me.btnLogout.UseVisualStyleBackColor = False
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(441, 74)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(99, 23)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Month Search"
+        '
+        'btnSort
+        '
+        Me.btnSort.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSort.Location = New System.Drawing.Point(568, 103)
+        Me.btnSort.Name = "btnSort"
+        Me.btnSort.Size = New System.Drawing.Size(76, 30)
+        Me.btnSort.TabIndex = 24
+        Me.btnSort.Text = "Sort"
+        Me.btnSort.UseVisualStyleBackColor = True
         '
         'Admin
         '
@@ -283,6 +316,8 @@ Partial Class Admin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1008, 561)
+        Me.Controls.Add(Me.btnSort)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnAddItem)
         Me.Controls.Add(Me.btnLogs)
         Me.Controls.Add(Me.btnRefresh)
@@ -336,4 +371,7 @@ Partial Class Admin
     Friend WithEvents btnLogs As Button
     Friend WithEvents btnAddItem As Button
     Friend WithEvents btnLogout As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lblMonth As Label
+    Friend WithEvents btnSort As Button
 End Class

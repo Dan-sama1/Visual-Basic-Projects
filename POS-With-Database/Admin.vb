@@ -103,8 +103,10 @@ Public Class Admin
         LoadTodaySales()
         DisplayMothlySales()
 
+        lblMonth.Text = DateTime.Now.ToString("MMMM").ToUpper
+
         dtpDate.Format = DateTimePickerFormat.Custom
-        dtpDate.CustomFormat = "MMMM yyyy"
+        dtpDate.CustomFormat = "MMMM"
     End Sub
 
     'Search
@@ -113,13 +115,6 @@ Public Class Admin
 
         Dim searchText As String = txtSearch.Text.Trim()
 
-        ' pull the monht and year 
-        ' NONTH IN NUMERIC FORM
-        Dim selectedMonth As String = dtpDate.Value.ToString("MM")
-        'SET THE YEAR
-        Dim selectedYear As String = dtpDate.Value.Year.ToString()
-
-        ' query
         Dim query As String = "
         SELECT 
             DATE(t.transaction_date) AS 'Transact Date',
@@ -135,17 +130,13 @@ Public Class Admin
         JOIN 
             tbl_items i ON ti.item_id = i.item_id
         WHERE 
-            (t.transaction_id LIKE @search OR 
-             i.item_name LIKE @search OR 
-             DATE(t.transaction_date) LIKE @search) 
-            AND MONTH(t.transaction_date) = @month 
-            AND YEAR(t.transaction_date) = @year;
+            t.transaction_id LIKE @search OR 
+            i.item_name LIKE @search OR 
+            DATE(t.transaction_date) LIKE @search;
     "
 
         Dim adapter As New MySqlDataAdapter(query, connection)
         adapter.SelectCommand.Parameters.AddWithValue("@search", "%" & searchText & "%")
-        adapter.SelectCommand.Parameters.AddWithValue("@month", selectedMonth)
-        adapter.SelectCommand.Parameters.AddWithValue("@year", selectedYear)
 
         Dim table As New DataTable
         adapter.Fill(table)
@@ -153,6 +144,7 @@ Public Class Admin
 
         connection.Close()
     End Sub
+
     'REFRESH TABLE
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         LoadTransactionReport()
@@ -202,6 +194,43 @@ Public Class Admin
     'ADD ITEMS
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
         AddItem.ShowDialog()
+    End Sub
+
+    Private Sub btnSort_Click(sender As Object, e As EventArgs) Handles btnSort.Click
+        ConnectionToDatabase()
+
+        Dim selectedMonth As String = dtpDate.Value.ToString("MM")
+        Dim selectedYear As String = dtpDate.Value.Year.ToString()
+
+        Dim query As String = "
+        SELECT 
+            DATE(t.transaction_date) AS 'Transact Date',
+            TIME(t.transaction_date) AS 'Transact Time',
+            t.transaction_id AS 'Transact Number',
+            i.item_name AS 'Order Name',
+            ti.quantity AS 'Quantity',
+            ti.total_price AS 'Total'
+        FROM 
+            tbl_transactions t
+        JOIN 
+            tbl_transactionItems ti ON t.transaction_id = ti.transaction_id
+        JOIN 
+            tbl_items i ON ti.item_id = i.item_id
+        WHERE 
+            MONTH(t.transaction_date) = @month 
+            AND YEAR(t.transaction_date) = @year
+        ORDER BY t.transaction_date DESC;
+    "
+
+        Dim adapter As New MySqlDataAdapter(query, connection)
+        adapter.SelectCommand.Parameters.AddWithValue("@month", selectedMonth)
+        adapter.SelectCommand.Parameters.AddWithValue("@year", selectedYear)
+
+        Dim table As New DataTable
+        adapter.Fill(table)
+        dtReport.DataSource = table
+
+        connection.Close()
     End Sub
 End Class
 

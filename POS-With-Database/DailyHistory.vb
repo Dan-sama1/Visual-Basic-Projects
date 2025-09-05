@@ -23,7 +23,7 @@ Public Class DailyHistory
         JOIN 
             tbl_item_sizes s ON ti.size_id = s.size_id
         WHERE 
-            DATE(t.transaction_date) = CURDATE() " & ' Filter by today's date
+            DATE(t.transaction_date) = CURDATE() " &
         "ORDER BY 
             t.transaction_date DESC", connection
     )

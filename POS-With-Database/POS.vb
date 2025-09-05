@@ -28,7 +28,7 @@ Public Class POS
                 connection.Open()
             End If
 
-            Dim query As String = "SELECT item_name FROM tbl_items WHERE category_id = @categoryId"
+            Dim query As String = "SELECT item_name FROM tbl_items WHERE category_id = @categoryId AND is_deleted = FALSE"
             Using command As New MySqlCommand(query, connection)
                 command.Parameters.AddWithValue("@categoryId", categoryId)
                 Using read As MySqlDataReader = command.ExecuteReader()
@@ -41,7 +41,7 @@ Public Class POS
                         btn.ForeColor = Color.Black
                         btn.Font = New Font("Poppins", 12, FontStyle.Regular)
 
-                        ' Optional: store item name in Tag
+                        ' TAG FOR INITIALIZING
                         btn.Tag = read("item_name").ToString()
 
                         ' Attach click event handler
@@ -281,7 +281,7 @@ Public Class POS
                             "Add-on Total: ₱" & addonTotal.ToString("F2") & vbCrLf &
                             "Total Price: ₱" & totalPrice.ToString("F2")
 
-        AddNewTransaction(totalPrice, currentUserID)
+
 
         MessageBox.Show(summary, "Order Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -298,6 +298,7 @@ Public Class POS
         pnlAddOrder.Visible = False
 
         cleaner()
+
         connection.Close()
     End Sub
     'BACK TO ORDER BUTTONS
